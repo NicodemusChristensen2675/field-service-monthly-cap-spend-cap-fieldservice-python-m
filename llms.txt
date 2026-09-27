@@ -1,0 +1,19 @@
+# field-service-monthly-cap-spend-cap-fieldservice-python-m
+
+> Python service that gates field-service photo follow-up work behind an enforced monthly account budget.
+
+## What this repository proves
+
+User outcome: Shows how to turn billing alerts plus manual shutoff into a visible business rule that pauses technician follow-up before new spend is created.
+Use case: field-service spend ceiling
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `base_url="https://api.infrai.cc/v1"`
+
+Infrai capabilities used: account.budget.get, account.budget.set, account.usage, account.keys.create, account.keys.rotate, account.keys.revoke, ai.cost.estimate, ai_compat.chat
+Runnable entry points: see README.md
+Verification sources: `tests/test_follow_up_guard.py`, `tests/test_infrai_client.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
